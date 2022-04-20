@@ -18,6 +18,8 @@ public class Demo1FindElements {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
 		driver.get("https://www.google.com/");
+		
+		System.out.println(driver.findElements(By.tagName("a")).size());
 
 		List<WebElement> elements = driver.findElements(By.tagName("a"));
 
