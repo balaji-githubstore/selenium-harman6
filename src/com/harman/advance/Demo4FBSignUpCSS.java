@@ -26,7 +26,16 @@ public class Demo4FBSignUpCSS {
 		driver.findElement(By.name("reg_email_confirmation__")).sendKeys("hello123@gmail.com");
 		driver.findElement(By.cssSelector("#password_step_input")).sendKeys("welcome123");
 		
-		driver.findElement(By.xpath("//input[@value='-1']")).click();
+		if(driver.findElement(By.xpath("//input[@value='-1']")).isSelected())
+		{
+			//already selected
+		}
+		else
+		{
+			driver.findElement(By.xpath("//input[@value='-1']")).click();
+		}
+		
+	
 		
 		Select selectDay=new Select(driver.findElement(By.id("day")));
 		selectDay.selectByVisibleText("9");	
